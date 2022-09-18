@@ -1,8 +1,6 @@
 import { FormEvent, useRef, useState, useEffect } from "react";
 
-export const SearchBox = ({
-  handleSearch,
-}: {
+export const SearchBox = ({handleSearch,}: {
   handleSearch: (e: FormEvent<HTMLFormElement>, CITY: string) => void;
 }) => {
   const [search, setSearch] = useState("");
@@ -12,6 +10,11 @@ export const SearchBox = ({
     const { value } = e.target as HTMLInputElement;
     setSearch(value);
   };
+
+  useEffect(() => {
+    inputRef.current?.focus()
+    }, [])
+
 
   return (
     <form
@@ -23,14 +26,15 @@ export const SearchBox = ({
     >
       <label htmlFor="search"></label>
       <input
+      ref={inputRef}
+      autoComplete="off"
+      id="search"
+      name="search"
         value={search}
-        onChange={handleChange}
         type="search"
-        autoComplete="off"
-        id="search"
-        name="search"
         placeholder="Buscar ubicación"
-        className="mb-6 rounded-lg px-5 py-2 w-80 text-slate-800"
+        className="w-72 h-8 p-3 rounded-full mt-12 mb-6 text-slate-800"
+        onChange={handleChange}
       />
     </form>
   );
