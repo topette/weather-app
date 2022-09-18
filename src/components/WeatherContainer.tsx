@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { DegreeSection } from "./DegreeSection";
 import { DetailsTable } from "./DetailsTable";
+import { Location } from "./Location";
 
 export const WeatherContainer = ({
   fetchedData,
@@ -9,7 +10,6 @@ export const WeatherContainer = ({
   fetchedData: any;
   error: string;
 }) => {
-
   const [weather, setWeather] = useState({
     city: "",
     country: "",
@@ -26,8 +26,7 @@ export const WeatherContainer = ({
   });
 
   useEffect(() => {
-    if (fetchedData) 
-      
+    if (fetchedData)
       setWeather({
         city: fetchedData.name,
         country: fetchedData.sys.country,
@@ -42,7 +41,6 @@ export const WeatherContainer = ({
         latitude: fetchedData.coord.lat,
         windSpeed: fetchedData.wind.speed + "m/s",
       });
-    
   }, [fetchedData]);
 
   return (

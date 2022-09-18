@@ -1,10 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getWeatherByCoords } from "./api/FetchWeather";
 import { WeatherContainer } from "./components/WeatherContainer";
 
 function App() {
 
   const [fetchedData, setFetchedData] = useState(null);
   const [error, setError] = useState("");
+
+  useEffect(() => {
+
+    navigator.geolocation.getCurrentPosition(async (position) => {
+      const LAT = position.coords.latitude;
+      const LON = position.coords.longitude;
+
+
+      try {
+        const data = await getWeatherByCoords(LAT, LON);
+        setFetchedData(data);
+
+      } catch (err) {        
+        setError("Error: " + err);
+      }
+    })
+  }, [])
 
   return (
     <div className="flex flex-col justify-center h-screen w-screen items-center shadow-lg">
