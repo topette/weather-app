@@ -13,10 +13,10 @@ function App() {
       const LAT = position.coords.latitude;
       const LON = position.coords.longitude;
 
-
       try {
         const data = await getWeatherByCoords(LAT, LON);
         setFetchedData(data);
+        console.log(data)
       } catch (err) {        
         setError("Revisa tu conexion a internet");
       }

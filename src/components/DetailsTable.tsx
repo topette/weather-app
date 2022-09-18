@@ -17,31 +17,31 @@ export const DetailsTable = ({
     <table>
       <tbody>
         <tr>
-          <td>Humedad:</td>
+          <th>Humedad:</th>
           <td id="humidity">{humidity}</td>
         </tr>
         <tr>
-          <td>Grados:</td>
+          <th>Grados:</th>
           <td id="feels">{feels}</td>
         </tr>
         <tr>
-          <td>Visibilidad:</td>
+          <th>Visibilidad:</th>
           <td id="visibility">{visibility}</td>
         </tr>
         <tr>
-          <td>Presión:</td>
+          <th>Presión:</th>
           <td id="pressure">{pressure}</td>
         </tr>
         <tr>
-          <td>Latitud:</td>
+          <th>Latitud:</th>
           <td id="latitud">{latitude}</td>
         </tr>
         <tr>
-          <td>Longitud:</td>
+          <th>Longitud:</th>
           <td id="longitude">{longitude}</td>
         </tr>
         <tr>
-          <td>Vientos:</td>
+          <th>Vientos:</th>
           <td id="windSpeed">{windSpeed}</td>
         </tr>
       </tbody>

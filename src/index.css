@@ -35,11 +35,11 @@ input {
 table {
     color: #eff;
     width: 210px;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 th {
-    padding: 0.6vh;
+    padding: 0vh;
     text-align: left;
     color: rgb(255, 153, 0);
 }
