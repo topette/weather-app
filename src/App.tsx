@@ -17,9 +17,8 @@ function App() {
       try {
         const data = await getWeatherByCoords(LAT, LON);
         setFetchedData(data);
-
       } catch (err) {        
-        setError("Error: " + err);
+        setError("Revisa tu conexion a internet");
       }
     })
   }, [])
@@ -27,7 +26,7 @@ function App() {
   return (
     <div className="flex flex-col justify-center h-screen w-screen items-center shadow-lg">
       <h1 className="font-bold text-slate-700 text-3xl mb-6">
-        <WeatherContainer fetchedData={undefined} error={""} />
+        <WeatherContainer fetchedData={undefined} error={error} />
       </h1>
     </div>
   );
