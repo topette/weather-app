@@ -36,9 +36,7 @@ function App() {
         setError("Type the city");
       } else {
         setFetchedData(data);
-        console.log(data)
       }
-
     } catch (err) {
       setError('Check your Internet conection')
     }
