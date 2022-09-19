@@ -30,11 +30,11 @@ export const SearchBox = ({handleSearch,}: {
       autoComplete="off"
       id="search"
       name="search"
-        value={search}
-        type="search"
-        placeholder="Buscar ubicación"
-        className="w-72 h-8 p-3 rounded-full mt-12 mb-6 text-slate-800"
-        onChange={handleChange}
+      value={search}
+      type="search"
+      placeholder="Find city or location..."
+      className="absolute w-72 h-12 p-3 rounded-full mt-8"
+      onChange={handleChange}
       />
     </form>
   );

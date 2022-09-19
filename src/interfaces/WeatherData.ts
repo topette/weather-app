@@ -11,4 +11,4 @@ export type WeatherData = {
     longitude: string;
     latitude: string;
     windSpeed: string;
-    };
+};

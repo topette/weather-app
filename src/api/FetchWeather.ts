@@ -5,7 +5,7 @@ export const getWeatherByCoords = async (LAT: number, LON: number): Promise<any>
     
     const response = await fetch(API_COORDS);
     const data = await response.json();
-    console.log("DATA: ", data)
+
     return data;
 };
 

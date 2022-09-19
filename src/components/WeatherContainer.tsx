@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { WeatherData } from "../interfaces/WeatherData";
 import { DegreeSection } from "./DegreeSection";
 import { DetailsTable } from "./DetailsTable";
 import { Location } from "./Location";
@@ -10,7 +11,7 @@ export const WeatherContainer = ({
   fetchedData: any;
   error: string;
 }) => {
-  const [weather, setWeather] = useState({
+  const [weather, setWeather] = useState<WeatherData>({
     city: "",
     country: "",
     temperature: 0,

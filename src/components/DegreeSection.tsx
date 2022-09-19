@@ -8,7 +8,7 @@ export const DegreeSection = ({
   return (
     <>
       <section className="text-5xl font-bold text-white">
-        <span className=" text-yellow-500" id="temperature">
+        <span className="text-yellow-500" id="temperature">
           {temperature}
         </span>
         ° C

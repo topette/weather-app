@@ -6,7 +6,7 @@ export const Location = ({data:{city, country}}:{ data:WeatherData}) => {
             <p className="mr-2" id="city">
                 {city}
             </p>
-            <span className=" text-cyan-500 capitalize text-base mt-4" id="country">
+            <span className="text-cyan-500 capitalize text-base mt-4" id="country">
                 {country}
             </span>
         </header>

@@ -1,4 +1,4 @@
-import { Children, FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { getWeatherByCoords, getWeatherBySearch } from "./api/FetchWeather";
 import { SearchBox } from "./components/SearchBox";
 import { WeatherContainer } from "./components/WeatherContainer";
@@ -7,7 +7,7 @@ function App() {
   const [fetchedData, setFetchedData] = useState(null);
   const [error, setError] = useState("");
 
-  // Conexion al API Datos
+  // Conexion al API 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(async (position) => {
       const LAT = position.coords.latitude;
@@ -16,9 +16,9 @@ function App() {
       try {
         const data = await getWeatherByCoords(LAT, LON);
         setFetchedData(data);
-        console.log(data);
+
       } catch (err) {
-        setError("Revisa tu conexion a internet");
+        setError("Check your Internet Connection");
       }
     });
   }, []);
@@ -38,18 +38,21 @@ function App() {
         setFetchedData(data);
         console.log(data)
       }
+
     } catch (err) {
-      setError('Check your internet conection')
+      setError('Check your Internet conection')
     }
   };
 
   return (
-    <div className="flex flex-col justify-center h-screen w-screen items-center shadow-lg">
-      <h1 className="font-bold text-slate-700 text-3xl mb-6">
-        <SearchBox handleSearch={handleSearch} />
-        <WeatherContainer fetchedData={undefined} error={error} />
+    <>
+    <div className="flex flex-col justify-center h-screen items-center shadow-lg">
+    <SearchBox handleSearch={handleSearch} />
+      <h1 className="font-bold text-slate-700 text-3xl mb-2">
+        <WeatherContainer fetchedData={fetchedData} error={error} />
       </h1>
     </div>
+    </>
   );
 }
 
