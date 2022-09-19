@@ -1,4 +1,4 @@
-const API_KEY = "ad14c83ce561d3a38c949a044c303976";
+const API_KEY = "MY HIDDEN KEY";
 
 export const getWeatherByCoords = async (LAT: number, LON: number): Promise<any> => {
     const API_COORDS = `https://api.openweathermap.org/data/2.5/weather?lat=${LAT}&lon=${LON}&appid=${API_KEY}`;
